@@ -15,7 +15,7 @@ public class Medidas {
          String opcao = "";
          int area = 0; // Receber o resultado dos cálculos de áreas
 
-         while (!opcao.toUpperCase().equals("S")){
+         // while (!opcao.toUpperCase().equals("S")){
 
              System.out.println("Escolha o Calculo Desejado");
              System.out.println("(1) - Area do Quadrado");
@@ -58,7 +58,7 @@ public class Medidas {
          if (area > 0) {
              System.out.println("A área é de " + area + "m²");
          }
-       }
+       //}
 
      }
 
@@ -128,10 +128,24 @@ public class Medidas {
      }
 
      public static void divisaoPorZero(){
-         System.out.println("Qual é o dividendo? (numero a ser dividido)");
-         int dividendo = entrada.nextInt();
-         System.out.println("Qual é o divisor? (numero que divide o dividendo)");
-         int divisor = entrada.nextInt();
+
+         try {
+             System.out.print("Qual é o dividendo? (numero a ser dividido)");
+             byte dividendo = entrada.nextByte();
+             System.out.print("Qual é o divisor? (numero que divide o dividendo)");
+             byte divisor = entrada.nextByte();
+             System.out.println("O resultado é: " + dividendo / divisor);
+         }
+         catch(Exception e) {
+
+             System.out.println("Mensagem temporária em inglês: - Erro: " + e.getMessage());
+
+         }
+
+         finally{
+             System.out.println("Por hoje é só pessoal!!");
+         }
+
      }
 
 }
